@@ -1,0 +1,109 @@
+---
+const navLinks = [
+    { label: "Work", href: "#projects" },
+    { label: "About", href: "#about" },
+    { label: "Contact", href: "#contact" },
+];
+---
+
+<header id="site-header">
+    <div id="header-inner">
+        <a href="/" id="logo" aria-label="Rock_Dev home">
+            <span class="logo-text">Rock_Dev</span>
+        </a>
+        <nav id="nav" aria-label="Main navigation">
+            {
+                navLinks.map((link) => (
+                    <a href={link.href} class="nav-link">
+                        {link.label}
+                    </a>
+                ))
+            }
+        </nav>
+    </div>
+</header>
+
+<style>
+    #site-header {
+        position: fixed;
+        top: 1.25rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+        width: fit-content;
+    }
+
+    #header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        padding: 0.65rem 1.75rem;
+        border-radius: 9999px;
+        background: rgba(10, 10, 10, 0.75);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 0.5px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+        transition: all 0.4s ease;
+    }
+
+    #logo {
+        text-decoration: none;
+        transition: transform 0.4s ease;
+    }
+
+    .logo-text {
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: -0.02em;
+    }
+
+    #nav {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        overflow: hidden;
+        max-width: 0;
+        opacity: 0;
+        transition:
+            max-width 0.5s ease,
+            opacity 0.4s ease;
+    }
+
+    .nav-link {
+        font-family: var(--font-sans);
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.65);
+        text-decoration: none;
+        white-space: nowrap;
+        transition:
+            color 0.2s ease,
+            font-size 0.2s ease;
+    }
+
+    .nav-link:hover {
+        color: #1a5c3a;
+        font-size: 0.95rem;
+    }
+
+    #site-header.scrolled #nav {
+        max-width: 300px;
+        opacity: 1;
+    }
+</style>
+
+<script>
+    const header = document.getElementById("site-header");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 60) {
+            header?.classList.add("scrolled");
+        } else {
+            header?.classList.remove("scrolled");
+        }
+    });
+</script>
