@@ -1,0 +1,47 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer id="site-footer">
+    <p id="footer-copy">© {year} José Rocha · Rock_Dev</p>
+    <div id="footer-links">
+        <a
+            href="https://github.com/rock-devv"
+            target="_blank"
+            rel="noopener noreferrer">GitHub</a
+        >
+        <a href="mailto:mail.rochajose@gmail.com">Email</a>
+    </div>
+</footer>
+
+<style>
+    #site-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem 8vw;
+        border-top: 0.5px solid rgba(255, 255, 255, 0.08);
+        background-color: #080f0b;
+    }
+
+    #footer-copy {
+        font-size: 0.8rem;
+        color: rgba(240, 240, 240, 0.35);
+    }
+
+    #footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    #footer-links a {
+        font-size: 0.8rem;
+        color: rgba(240, 240, 240, 0.35);
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    #footer-links a:hover {
+        color: #1db954;
+    }
+</style>
