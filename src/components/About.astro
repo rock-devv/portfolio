@@ -1,0 +1,132 @@
+---
+const books = [
+    { title: "Neuromancer", author: "William Gibson" },
+    { title: "Network Warrior", author: "Gary A. Donahue" },
+    { title: "1984", author: "George Orwell" },
+    { title: "Meditations", author: "Marcus Aurelius" },
+];
+---
+
+<section id="about">
+    <div id="about-inner">
+        <div id="about-left">
+            <img src="/profile.jpeg" alt="José Rocha" id="about-photo" />
+        </div>
+        <div id="about-right">
+            <p class="section-label">Who I am</p>
+            <h2 class="section-title">About</h2>
+            <p id="about-bio">
+                I'm José Rocha, a Junior Developer enrolled in Computer Networks
+                at IFC - SC. I give English classes on my free time and mostly
+                do whatever I'm interested in at the moment — building websites
+                and apps, coding scripts for fun, automating boring tasks, and
+                trying to be creative in the fields I enjoy personally: music,
+                reading, writing, exercising, or just thinking about the
+                deepness of the cosmos while walking barefoot at home and
+                catching a cold because of it.
+            </p>
+            <div id="about-books">
+                <p class="books-label">Currently on my shelf</p>
+                <ul id="books-list">
+                    {
+                        books.map((book) => (
+                            <li class="book-item">
+                                <span class="book-title">{book.title}</span>
+                                <span class="book-author">{book.author}</span>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    #about {
+        background-color: #080f0b;
+        padding: 8rem 8vw;
+        border-top: 0.5px solid rgba(255, 255, 255, 0.08);
+    }
+
+    #about-inner {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 4rem;
+        max-width: 900px;
+        align-items: start;
+    }
+
+    #about-photo {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+        object-position: center top;
+        border-radius: 8px;
+        filter: grayscale(100%);
+        border: 0.5px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .section-label {
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #1db954;
+        opacity: 0.8;
+        margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 800;
+        color: #f0f0f0;
+        margin: 0 0 1.5rem;
+    }
+
+    #about-bio {
+        font-size: 0.95rem;
+        color: rgba(240, 240, 240, 0.6);
+        line-height: 1.8;
+        margin: 0 0 2.5rem;
+    }
+
+    .books-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #1db954;
+        margin-bottom: 1rem;
+    }
+
+    #books-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .book-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding-bottom: 0.75rem;
+        border-bottom: 0.5px solid rgba(255, 255, 255, 0.06);
+        gap: 1rem;
+    }
+
+    .book-title {
+        font-size: 0.9rem;
+        color: #f0f0f0;
+        font-weight: 500;
+    }
+
+    .book-author {
+        font-size: 0.8rem;
+        color: rgba(240, 240, 240, 0.35);
+        white-space: nowrap;
+    }
+</style>

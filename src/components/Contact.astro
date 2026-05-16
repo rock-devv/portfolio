@@ -1,0 +1,251 @@
+---
+
+---
+
+<section id="contact">
+    <div id="contact-inner">
+        <div id="contact-left">
+            <p class="section-label">Get in touch</p>
+            <h2 class="section-title">Contact</h2>
+            <p id="contact-sub">
+                Have a project in mind or just want to talk? Fill the form or
+                reach me directly through one of the links below.
+            </p>
+            <div id="contact-socials">
+                <a
+                    href="https://github.com/rock-devv"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-link">GitHub</a
+                >
+                <a href="mailto:mail.rochajose@gmail.com" class="social-link"
+                    >Email</a
+                >
+            </div>
+        </div>
+        <div id="contact-right">
+            <form
+                id="contact-form"
+                action="https://api.web3forms.com/submit"
+                method="POST"
+            >
+                <input
+                    type="hidden"
+                    name="access_key"
+                    value="35bdd057-68c6-49ea-ac4d-725555c3fc3b"
+                />
+                <input
+                    type="hidden"
+                    name="subject"
+                    value="Portfolio Contact Form"
+                />
+                <input type="checkbox" name="botcheck" style="display:none" />
+
+                <div class="field">
+                    <label for="name">Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        placeholder="Your name"
+                    />
+                </div>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        placeholder="your@email.com"
+                    />
+                </div>
+                <div class="field">
+                    <label for="phone">Phone</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="+55 47 00000-0000"
+                    />
+                </div>
+                <div class="field">
+                    <label for="message">Message</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        required
+                        placeholder="What's on your mind?"
+                        rows="5"></textarea>
+                </div>
+                <button type="submit" id="submit-btn">Send message</button>
+                <p id="form-status"></p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<style>
+    #contact {
+        background-color: #080f0b;
+        padding: 8rem 8vw;
+        border-top: 0.5px solid rgba(255, 255, 255, 0.08);
+    }
+
+    #contact-inner {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 4rem;
+        max-width: 900px;
+        align-items: start;
+    }
+
+    .section-label {
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #1db954;
+        opacity: 0.8;
+        margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 800;
+        color: #f0f0f0;
+        margin: 0 0 1rem;
+    }
+
+    #contact-sub {
+        font-size: 0.9rem;
+        color: rgba(240, 240, 240, 0.5);
+        line-height: 1.7;
+        margin: 0 0 2rem;
+    }
+
+    #contact-socials {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .social-link {
+        font-size: 0.9rem;
+        color: rgba(240, 240, 240, 0.5);
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .social-link:hover {
+        color: #1db954;
+    }
+
+    #contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    label {
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(240, 240, 240, 0.4);
+    }
+
+    input,
+    textarea {
+        background: rgba(255, 255, 255, 0.03);
+        border: 0.5px solid rgba(255, 255, 255, 0.1);
+        border-radius: 6px;
+        padding: 0.75rem 1rem;
+        color: #f0f0f0;
+        font-size: 0.9rem;
+        font-family: inherit;
+        transition: border-color 0.2s ease;
+        outline: none;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        color: rgba(240, 240, 240, 0.2);
+    }
+
+    input:focus,
+    textarea:focus {
+        border-color: #1a5c3a;
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    #submit-btn {
+        padding: 0.75rem 2rem;
+        border-radius: 9999px;
+        background: transparent;
+        border: 1px solid #1a5c3a;
+        color: #1db954;
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        letter-spacing: 0.04em;
+        transition:
+            background 0.2s ease,
+            color 0.2s ease;
+        align-self: flex-start;
+    }
+
+    #submit-btn:hover {
+        background: #1a5c3a;
+        color: #f0f0f0;
+    }
+
+    #form-status {
+        font-size: 0.85rem;
+        color: #1db954;
+        min-height: 1.2rem;
+    }
+</style>
+
+<script>
+    const form = document.getElementById("contact-form") as HTMLFormElement;
+    const status = document.getElementById(
+        "form-status",
+    ) as HTMLParagraphElement;
+    const btn = document.getElementById("submit-btn") as HTMLButtonElement;
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        btn.textContent = "Sending...";
+        btn.disabled = true;
+
+        const data = new FormData(form);
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: data,
+        });
+
+        if (response.ok) {
+            status.textContent = "Message sent. I'll get back to you soon.";
+            form.reset();
+        } else {
+            status.textContent =
+                "Something went wrong. Try emailing me directly.";
+        }
+
+        btn.textContent = "Send message";
+        btn.disabled = false;
+    });
+</script>
