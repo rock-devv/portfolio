@@ -21,7 +21,7 @@ const projects = [
         solution:
             "Self-hosted automation bot that scrapes any marketplace link (Amazon, Mercado Livre, etc.) and generates a humanized, image-ready post for WhatsApp, Instagram, and Facebook.",
         tags: ["n8n", "Ollama", "Puppeteer", "ngrok", "Docker"],
-        link: "#",
+        link: "https://github.com/rock-devv/Telegram-PostBot",
         linkLabel: "Repo coming soon",
     },
 ];
@@ -72,7 +72,7 @@ const projects = [
 
 <style>
     #projects {
-        background-color: #080f0b;
+        background-color: var(--color-bg);
         padding: 8rem 8vw;
     }
 
@@ -85,7 +85,7 @@ const projects = [
         font-weight: 500;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: #1db954;
+        color: var(--color-accent-bright);
         opacity: 0.8;
         margin-bottom: 0.5rem;
     }
@@ -93,7 +93,7 @@ const projects = [
     .section-title {
         font-size: clamp(1.75rem, 4vw, 2.5rem);
         font-weight: 800;
-        color: #f0f0f0;
+        color: var(--color-text-primary);
         margin: 0 0 3rem;
     }
 
@@ -107,13 +107,13 @@ const projects = [
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 2.5rem;
-        border: 0.5px solid rgba(255, 255, 255, 0.08);
+        border: 0.5px solid var(--color-border);
         border-radius: 12px;
         overflow: hidden;
     }
 
     .card-image-placeholder {
-        background-color: #0f2018;
+        background-color: var(--color-surface);
         min-height: 320px;
     }
 
@@ -129,13 +129,13 @@ const projects = [
         font-weight: 500;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        color: rgba(240, 240, 240, 0.35);
+        color: var(--color-text-secondary);
     }
 
     .card-title {
         font-size: 1.5rem;
         font-weight: 700;
-        color: #f0f0f0;
+        color: var(--color-text-primary);
         margin: 0;
     }
 
@@ -150,13 +150,13 @@ const projects = [
         font-weight: 600;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        color: #1db954;
+        color: var(--color-accent-bright);
         margin-bottom: 0.25rem;
     }
 
     .case-text {
         font-size: 0.9rem;
-        color: rgba(240, 240, 240, 0.6);
+        color: var(--color-text-secondary);
         line-height: 1.6;
         margin: 0;
     }
@@ -171,14 +171,14 @@ const projects = [
         font-size: 0.75rem;
         padding: 0.25rem 0.65rem;
         border-radius: 9999px;
-        border: 0.5px solid rgba(26, 92, 58, 0.6);
-        color: rgba(29, 185, 84, 0.7);
+        border: 0.5px solid var(--color-accent);
+        color: var(--color-accent-bright);
     }
 
     .card-link {
         font-size: 0.85rem;
         font-weight: 500;
-        color: #1db954;
+        color: var(--color-accent-bright);
         text-decoration: none;
         margin-top: auto;
         transition: letter-spacing 0.2s ease;

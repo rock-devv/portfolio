@@ -1,20 +1,32 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Syne:wght@400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inconsolata:wght@200..900&display=swap");
 @import "tailwindcss";
 
 @theme {
     --font-sans: "DM Sans", sans-serif;
-    --font-display: "Syne", sans-serif;
+    --font-display: "Inconsolata", monospace;
     --default-font-family: "DM Sans", sans-serif;
+}
+
+:root {
+    --color-bg: #111111;
+    --color-surface: #1a1a1a;
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-text-primary: #f0f0f0;
+    --color-text-secondary: #888888;
+    --color-accent: #1a5c3a;
+    --color-accent-bright: #2d9e63;
 }
 
 @layer base {
     body {
-        background-color: #080f0b;
+        background-color: var(--color-bg);
+        color: var(--color-text-primary);
     }
+
     h1,
     h2,
     h3,
     h4 {
-        font-family: "Syne", sans-serif;
+        font-family: var(--font-display);
     }
 }
