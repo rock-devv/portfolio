@@ -5,11 +5,11 @@
 <section id="contact">
     <div id="contact-inner">
         <div id="contact-left">
-            <p class="section-label">Get in touch</p>
-            <h2 class="section-title">Contact</h2>
+            <p class="section-label">Onde me achar</p>
+            <h2 class="section-title">Contato</h2>
             <p id="contact-sub">
-                Have a project in mind or just want to talk? Fill the form or
-                reach me directly through one of the links below.
+                Algum projeto em mente? Entre em contato pelo formulário ou me
+                ache em alguma das redes sociais abaixo.
             </p>
             <div id="contact-socials">
                 <a
@@ -42,13 +42,13 @@
                 <input type="checkbox" name="botcheck" style="display:none" />
 
                 <div class="field">
-                    <label for="name">Name</label>
+                    <label for="name">Nome</label>
                     <input
                         type="text"
                         id="name"
                         name="name"
                         required
-                        placeholder="Your name"
+                        placeholder="Seu nome"
                     />
                 </div>
                 <div class="field">
@@ -58,28 +58,30 @@
                         id="email"
                         name="email"
                         required
-                        placeholder="your@email.com"
+                        placeholder="seu@email.com"
                     />
                 </div>
                 <div class="field">
-                    <label for="phone">Phone</label>
+                    <label for="phone">Celular</label>
                     <input
                         type="tel"
                         id="phone"
                         name="phone"
-                        placeholder="+55 47 00000-0000"
+                        placeholder="Celular, WhatsApp, Telegram"
                     />
                 </div>
                 <div class="field">
-                    <label for="message">Message</label>
+                    <label for="message">Mensagem</label>
                     <textarea
                         id="message"
                         name="message"
                         required
-                        placeholder="What's on your mind?"
+                        placeholder="O que você está pensando?"
                         rows="5"></textarea>
                 </div>
-                <button type="submit" id="submit-btn">Send message</button>
+                <button type="submit" id="submit-btn" class="btn">
+                    Enviar mensagem.
+                </button>
                 <p id="form-status"></p>
             </form>
         </div>
@@ -193,24 +195,7 @@
     }
 
     #submit-btn {
-        padding: 0.75rem 2rem;
-        border-radius: 9999px;
-        background: transparent;
-        border: 1px solid var(--color-accent);
-        color: var(--color-accent-bright);
-        font-size: 0.9rem;
-        font-weight: 500;
-        cursor: pointer;
-        letter-spacing: 0.04em;
-        transition:
-            background 0.2s ease,
-            color 0.2s ease;
         align-self: flex-start;
-    }
-
-    #submit-btn:hover {
-        background: var(--color-accent);
-        color: var(--color-text-primary);
     }
 
     #form-status {
@@ -229,7 +214,7 @@
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
-        btn.textContent = "Sending...";
+        btn.textContent = "Enviando...";
         btn.disabled = true;
 
         const data = new FormData(form);
@@ -239,14 +224,14 @@
         });
 
         if (response.ok) {
-            status.textContent = "Message sent. I'll get back to you soon.";
+            status.textContent = "Mensagem enviada. Entro em contato logo!";
             form.reset();
         } else {
             status.textContent =
-                "Something went wrong. Try emailing me directly.";
+                "Algo deu errado. Tente me enviar um email ou usar uma das redes sociais diretamente.";
         }
 
-        btn.textContent = "Send message";
+        btn.textContent = "Enviar mensagem";
         btn.disabled = false;
     });
 </script>
